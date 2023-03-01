@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Results from "@/components/Results";
 import requests from "utils/requests";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ results }) {
   return (
@@ -36,6 +36,8 @@ export async function getServerSideProps(context) {
       requests[genre]?.url || requests.fetchTrending.url
     }`
   ).then((res) => res.json());
+
+  console.log(request);
 
   return {
     props: {
